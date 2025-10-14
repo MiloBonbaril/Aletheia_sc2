@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aletheia_sc2"
+version = "0.1.0"
+authors = [
+    { name = "MiloBonbaril", email = "milo.bonbaril@gmail.com" }
+]
+description = "A StarCraft II AI project using python-sc2"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "burnysc2",
+    "torch",
+    "gymnasium",
+    "pyarrow",
+    "orjson",
+    "duckdb",
+    "pydantic",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["aletheia_sc2"]
